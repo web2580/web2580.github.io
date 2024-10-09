@@ -80,33 +80,3 @@ td{
 img:hover{
   transform: rotate(7200deg) scale(2);
 }
-
-@keyframes color-change {
-  0% {
-    background-color: red;
-  }
-  12.5%{
-    background-color: orange;
-  }
-  25%{
-    background-color: yellow;
-  }
-  37.5%{
-    background-color: green;
-  }
-  50%{
-    background-color: blue;
-  }
-  62.5% {
-    background-color: purple;
-  }
-  75% {
-    background-color: pink;
-  }
-  82.5% {
-    background-color: white;
-  }
-  100%{
-    background-color: red;
-  }
-}
