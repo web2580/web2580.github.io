@@ -102,72 +102,37 @@
     </script>
     <script src="js/include.js"></script>
     <script src="js/nyancat.js"></script>
-    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-    <script>
-        L2Dwidget.init({
-            "model": {　 //jsonpath控制显示那个小萝莉模型，
-                //(切换模型需要改动)
-                jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
-                /*
-                其他可选的模型：
-                黑猫：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json
-                萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
-                白猫：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json
-                狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
-                小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
-                小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
-                ...
-                */
-                "scale": 1
+    <script type="text/javascript">
+    var txt_idx = 0;
+    var color_idx = 0;
+
+    var poptxts = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法制", "爱国", "敬业", "诚信", "友善");
+    var colors = new Array("red", "blue", "#669966", "orange", "#666699", "green", "#996666", "purple", "yellow", "orange", "#666699", "green");
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var $i = $("<span/>").text(poptxts[txt_idx]);
+            txt_idx = (txt_idx + 1) % poptxts.length;
+            color_idx = parseInt(12*Math.random());     // 颜色随机数
+            var pagex = e.pageX, pagey = e.pageY;
+            $i.css({
+                "z-index": 999,
+                "top": pagey - 20,
+                "left": pagex,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": colors[color_idx]
+            });
+            $("body").append($i);
+            $i.animate({
+                "top": pagey - 180,
+                "opacity": 0
             },
-            "display": {
-                "position": "right", //看板娘的表现位置
-                "width": 150, //小萝莉的宽度
-                "height": 300, //小萝莉的高度
-                "hOffset": 0,
-                "vOffset": -20
-            },
-            "mobile": {
-                "show": true,
-                "scale": 0.5
-            },
-            "react": {
-                "opacityDefault": 0.7,
-                "opacityOnHover": 0.2
-            }
+            1500,
+            function() {
+                $i.remove();
+            });
         });
+    });
     </script>
-    <script type="text/javascript"> 
-/* 鼠标特效 */
-var a_idx = 0; 
-jQuery(document).ready(function($) { 
-    $("body").click(function(e) { 
-        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善"); 
-		var b = new Array("red","blue","yellow","green","pink","blue","orange");
-        var $i = $("<span/>").text(a[a_idx]); 
-        a_idx = (a_idx + 1) % a.length; 
-		b_idx = (a_idx+1)%7;/* 七中颜色变色 */
-        var x = e.pageX, 
-        y = e.pageY; 
-        $i.css({ 
-            "z-index": 9999, 
-            "top": y - 20, 
-            "left": x, 
-            "position": "absolute", 
-            "font-weight": "bold", 
-            "color": b[b_idx]
-        }); 
-        $("body").append($i); 
-        $i.animate({ 
-            "top": y - 180, 
-            "opacity": 0 
-        }, 
-        1500, 
-        function() { 
-            $i.remove(); 
-        }); 
-    }); 
-}); 
-</script>
   </body>
 </html>
