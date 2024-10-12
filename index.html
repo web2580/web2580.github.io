@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <title>萝莉先辈</title>
   </head>
   <body>
@@ -136,5 +137,37 @@
             }
         });
     </script>
+    <script type="text/javascript"> 
+/* 鼠标特效 */
+var a_idx = 0; 
+jQuery(document).ready(function($) { 
+    $("body").click(function(e) { 
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善"); 
+		var b = new Array("red","blue","yellow","green","pink","blue","orange");
+        var $i = $("<span/>").text(a[a_idx]); 
+        a_idx = (a_idx + 1) % a.length; 
+		b_idx = (a_idx+1)%7;/* 七中颜色变色 */
+        var x = e.pageX, 
+        y = e.pageY; 
+        $i.css({ 
+            "z-index": 9999, 
+            "top": y - 20, 
+            "left": x, 
+            "position": "absolute", 
+            "font-weight": "bold", 
+            "color": b[b_idx]
+        }); 
+        $("body").append($i); 
+        $i.animate({ 
+            "top": y - 180, 
+            "opacity": 0 
+        }, 
+        1500, 
+        function() { 
+            $i.remove(); 
+        }); 
+    }); 
+}); 
+</script>
   </body>
 </html>
