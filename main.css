@@ -71,3 +71,7 @@ td{
   display: flex;
   flex-direction: row;
 }
+
+img:hover{
+  transform: rotate(7200deg) scale(2);
+}
