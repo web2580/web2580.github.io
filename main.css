@@ -7,6 +7,9 @@ body {
   padding: 0;
   margin: 0;
   animation: color-change 0.5s infinite;
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
 }
 
 img {
@@ -96,4 +99,17 @@ img:hover{
   z-index: 1; /* 确保内容在画布上方 */
   text-align: center;
   margin-top: 20%;
+}
+
+/* 暗黑模式的样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* 样式按钮 */
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
 }
