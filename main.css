@@ -81,3 +81,12 @@ td{
 img:hover{
   transform: rotate(7200deg) scale(2);
 }
+
+#canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* 把 canvas 放在所有内容的后面 */
+            width: 100vw;
+            height: 100vh;
+}
