@@ -9,6 +9,11 @@ body {
   animation: color-change 0.5s infinite;
 }
 
+img {
+  border-radius: 10px; /* 只让边角稍微圆润 */
+  transition: transform 3s ease-in-out;
+}
+
 table{
   padding-top: 40px;
 }
