@@ -9,11 +9,6 @@ body {
   animation: color-change 0.5s infinite;
 }
 
-img{
-  border-radius: 50%;
-  transition: transform 3s ease-in-out;
-}
-
 table{
   padding-top: 40px;
 }
