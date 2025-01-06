@@ -3,5 +3,3 @@
 萝莉先辈的自述网站AB
 
  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=web2580" alt="Top Langs" />
-
-Co-authored-by: web2580 <max45456@qq.com>
